@@ -1,0 +1,1 @@
+docker exec frontend sh -c 'ping -c 1 postgres > /dev/null && echo "Failed" || echo "Passed."'

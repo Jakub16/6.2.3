@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+var cors = require('cors');
+
+app.use(cors());
 
 const host = process.env.DB_HOST || 'postgres';
 const port = process.env.DB_PORT || '5432';
@@ -13,8 +16,8 @@ const pool = new Pool({
     port: parseInt(port),
 })
 
-app.listen(3000, '0.0.0.0', () => {
-    console.log('Application listening at 0.0.0.0:3000');
+app.listen(5000, '0.0.0.0', () => {
+    console.log('Application listening at 0.0.0.0:5000');
 });
 
 app.get('/transactions', async(req, res) => {
